@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.3.1.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <title>Document</title>
+</head>
+<body>
+  <form  action="" method="GET" id="Form">
+    <div class="field">
+        <label class="label">FirstName</label>
+        <div class="control">
+          <input class="input" id="firstname" type="text" required placeholder="Text input" >
+        </div>
+      </div>
+     
+      
+      <div class="field">
+        <label class="label">Lastname</label>
+        <div class="control">
+          <input class="input" id="lastname" type="text" required placeholder="Text input">
+        </div>
+      </div>
+      
+      <div class="field">
+        <label class="label">Email</label>
+        
+          <input class="input " type="email" required placeholder="Email input" id="email" >
+          
+        </div>
+        
+      </div>
+      <div class="field">
+        <label class="label">Password</label>
+        
+          <input class="input" id="password" type="password" required placeholder="input password">
+          
+        </div>
+        
+      </div>
+      
+      <div class="field">
+        <label class="label">Interests</label>
+        <div class="control">
+          <textarea class="textarea" required placeholder="Textarea"></textarea>
+        </div>
+    </div>  
+    <div class="field">
+      <label class="label">Hobbies</label>
+      <div class="control">
+        <textarea class="textarea" required placeholder="Textarea"></textarea>
+      </div>
+  </div>
+ 
+  <div class="field">
+    <div class="control">
+      <label class="label">Gender</label>
+      <label class="radio">
+        <input type="radio" name="gender" value="male">
+        male
+      </label>
+      <label class="radio">
+        <input type="radio" name="gender" value="female" >
+       female
+      </label>
+    </div>
+  </div>
+  <div class="field">
+    <div class="control">
+     <input type="submit" class="button is-primary" value="submit"/>
+      </div>
+  </div>
+</form>
+</body>
+</html>
+<script>
+  /*
+    function alertfunction() {
+       alert("thank you!");
+       var obj={firstname: document.getElementById('firstname').value, lastname: document.getElementById('lastname').value, email: document.getElementById('email').value, password: document.getElementById('password').value,gender:document.querySelector('input[name = "gender"]:checked').value}
+       for( var i in obj)
+       {
+         console.log(i , obj[i]);
+       }
+       document.write("firstname is:" + firstname.value,"lastname is:" + lastname.value,"email is:" + email.value,"password is:" + password.value);
+      } */
+ $('#Form').submit(function(e){
+ e.preventDefault();
+       var obj = {
+         firstname: $('input#firstname').val(),
+         lastname: $('input#lastname').val(),
+         email: $('input#email').val(),
+         gender: $('input[name=gender]:radio:checked').val()
+       }
+       console.log(obj);
+ alert("thank you!");
+     });
+   
+   
+ </script>
+ 
