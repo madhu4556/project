@@ -1,104 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="jquery-3.3.1.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.2/css/bulma.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
-  <form  action="" method="GET" id="Form">
-    <div class="field">
-        <label class="label">FirstName</label>
-        <div class="control">
-          <input class="input" id="firstname" type="text" required placeholder="Text input" >
-        </div>
-      </div>
-     
+
+  <body>
+
+    <h2>JavaScript Can Validate Input</h2>
+    
+    <p>Please input  number</p>
+    
+    <input id="num">
+    
+    <button type="button" onclick="Function()">Submit</button>
+    
+    <p id="test"></p>
+    
+    
+    
+    </body>
+    </html> 
+    
+    <script>
+      function Function() {
+          var x, text;
       
-      <div class="field">
-        <label class="label">Lastname</label>
-        <div class="control">
-          <input class="input" id="lastname" type="text" required placeholder="Text input">
-        </div>
-      </div>
+          // Get the value of the input field with id="num"
+          x = document.getElementById("num").value;
       
-      <div class="field">
-        <label class="label">Email</label>
-        
-          <input class="input " type="email" required placeholder="Email input" id="email" >
+          // If x is Not a Number or , input will not be taken
+         
+         
+          for( var i=0;i<=x;i++)
+          {
+            if(isNaN=x[i])
+            {
+              text = "Input not valid";
+            }
+            else {
+              text = "Input OK";
+          }
+          }
+
+          document.getElementById("test").innerHTML = text;
+          var res = x.split(",");
+          document.getElementById("test").innerHTML = res;
+         
           
-        </div>
-        
-      </div>
-      <div class="field">
-        <label class="label">Password</label>
-        
-          <input class="input" id="password" type="password" required placeholder="input password">
-          
-        </div>
-        
-      </div>
+          document.write(res[2]*3);
+      }
+      </script>
       
-      <div class="field">
-        <label class="label">Interests</label>
-        <div class="control">
-          <textarea class="textarea" required placeholder="Textarea"></textarea>
-        </div>
-    </div>  
-    <div class="field">
-      <label class="label">Hobbies</label>
-      <div class="control">
-        <textarea class="textarea" required placeholder="Textarea"></textarea>
-      </div>
-  </div>
- 
-  <div class="field">
-    <div class="control">
-      <label class="label">Gender</label>
-      <label class="radio">
-        <input type="radio" name="gender" value="male">
-        male
-      </label>
-      <label class="radio">
-        <input type="radio" name="gender" value="female" >
-       female
-      </label>
-    </div>
-  </div>
-  <div class="field">
-    <div class="control">
-     <input type="submit" class="button is-primary" value="submit"/>
-      </div>
-  </div>
-</form>
-</body>
-</html>
-<script>
-  /*
-    function alertfunction() {
-       alert("thank you!");
-       var obj={firstname: document.getElementById('firstname').value, lastname: document.getElementById('lastname').value, email: document.getElementById('email').value, password: document.getElementById('password').value,gender:document.querySelector('input[name = "gender"]:checked').value}
-       for( var i in obj)
-       {
-         console.log(i , obj[i]);
-       }
-       document.write("firstname is:" + firstname.value,"lastname is:" + lastname.value,"email is:" + email.value,"password is:" + password.value);
-      } */
- $('#Form').submit(function(e){
- e.preventDefault();
-       var obj = {
-         firstname: $('input#firstname').val(),
-         lastname: $('input#lastname').val(),
-         email: $('input#email').val(),
-         gender: $('input[name=gender]:radio:checked').val()
-       }
-       console.log(obj);
- alert("thank you!");
-     });
-   
-   
- </script>
- 
